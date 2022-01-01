@@ -186,9 +186,9 @@ const App = () => {
     if (!address) {
         return (
             <div className="landing">
-                <h1>Welcome to NarutoDAO</h1>
+                <h1>中文写作非中心化自治组织</h1>
                 <button onClick={() => connectWallet("injected")} className="btn-hero">
-                    Connect your wallet
+                    链接你的钱包
                 </button>
             </div>
         );
@@ -198,16 +198,17 @@ const App = () => {
     if (hasClaimedNFT) {
         return (
             <div className="member-page">
-                <h1>🍪DAO Member Page</h1>
-                <p>Congratulations on being a member</p>
+                <h2>中文写作非中心化自治组织</h2>
+                <h1>成员页</h1>
+                <p>恭喜成为我们的一员！</p>
                 <div>
                     <div>
-                        <h2>Member List</h2>
+                        <h2>成员列表</h2>
                         <table className="card">
                             <thead>
                             <tr>
-                                <th>Address</th>
-                                <th>Token Amount</th>
+                                <th>地址</th>
+                                <th>Token 数量</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -223,7 +224,7 @@ const App = () => {
                         </table>
                     </div>
                     <div>
-                        <h2>Active Proposals</h2>
+                        <h2>决议中的提案</h2>
                         <form
                             onSubmit={async (e) => {
                                 e.preventDefault();
@@ -335,14 +336,13 @@ const App = () => {
                             ))}
                             <button disabled={isVoting || hasVoted} type="submit">
                                 {isVoting
-                                    ? "Voting..."
+                                    ? "确认中..."
                                     : hasVoted
-                                        ? "You Already Voted"
-                                        : "Submit Votes"}
+                                        ? "你已经投过票了"
+                                        : "提交投票"}
                             </button>
                             <small>
-                                This will trigger multiple transactions that you will need to
-                                sign.
+                                该投票会触发多次交易以记录你的选择，请先完成登入。
                             </small>
                         </form>
                     </div>
@@ -376,12 +376,12 @@ const App = () => {
     // Render mint nft screen.
     return (
         <div className="mint-nft">
-            <h1>Mint your free 🍪DAO Membership NFT</h1>
+            <h1>获取你的 CWDAO 成员专属 NFT</h1>
             <button
                 disabled={isClaiming}
                 onClick={() => mintNft()}
             >
-                {isClaiming ? "Minting..." : "Mint your nft (FREE)"}
+                {isClaiming ? "获取中……" : "免费获取"}
             </button>
         </div>
     );
